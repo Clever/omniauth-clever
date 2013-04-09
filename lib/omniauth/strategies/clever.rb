@@ -6,9 +6,9 @@ module OmniAuth
       option :name, "clever"
 
       option :client_options, {
-        :site          => 'https://api.getclever.com/',
-        :authorize_url => '/oauth/authorize',
-        :token_url     => '/oauth/token'
+        :site          => 'https://api.getclever.com',
+        :authorize_url => 'https://account.getclever.com/oauth/authorize',
+        :token_url     => 'https://api.getclever.com/oauth/token'
       }
 
       def authorize_params
