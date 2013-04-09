@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Omniauth::Clever::VERSION
   gem.authors       = ["Carol Nichols"]
   gem.email         = ["cnichols@thinkthroughmath.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Unofficial OmniAuth strategy for Clever SSO OAuth2 integration}
+  gem.summary       = %q{The unofficial strategy for authenticating people using Clever to your application using Clever OAuth2}
+  gem.homepage      = "https://github.com/thinkthroughmath/omniauth-clever"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
