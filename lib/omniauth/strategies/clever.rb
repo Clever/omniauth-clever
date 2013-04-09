@@ -11,6 +11,12 @@ module OmniAuth
         :token_url     => '/oauth/token'
       }
 
+      def authorize_params
+        super.tap do |params|
+          params[:scope] = 'read_only'
+        end
+      end
+
       uid{ raw_info['id'] }
 
       info do
