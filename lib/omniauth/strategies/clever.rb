@@ -1,4 +1,5 @@
 require 'omniauth-oauth2'
+require 'base64'
 
 module OmniAuth
   module Strategies
@@ -16,6 +17,14 @@ module OmniAuth
           params[:scope] = 'read_only'
         end
       end
+
+      def token_params
+        username_password = options.client_secret + ":"
+        super.tap do |params|
+          params[:headers] = {'Authorization' => "Basic #{Base64.encode64(username_password)}"}
+        end
+      end
+
 
       uid{ raw_info['id'] }
 
