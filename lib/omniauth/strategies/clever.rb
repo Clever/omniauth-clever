@@ -26,16 +26,16 @@ module OmniAuth
       end
 
 
-      uid{ raw_info['id'] }
+
+      uid{ raw_info['data']['id'] }
 
       info do
         {
-          :name        => raw_info['name'],
-          :email       => raw_info['email'],
-          :district    => raw_info['district'],
-          :school      => raw_info['school'],
-          "name.first" => raw_info['name.first'],
-          "name.last"  => raw_info['name.last']
+          :name        => raw_info['data']['name'],
+          :email       => raw_info['data']['email'],
+          :district_id => raw_info['data']['district_id'],
+          :name        => raw_info['data']['name'],
+          :phone       => raw_info['data']['phone']
         }
       end
 
