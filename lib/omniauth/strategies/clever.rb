@@ -30,13 +30,7 @@ module OmniAuth
       uid{ raw_info['data']['id'] }
 
       info do
-        {
-          :name        => raw_info['data']['name'],
-          :email       => raw_info['data']['email'],
-          :district_id => raw_info['data']['district_id'],
-          :name        => raw_info['data']['name'],
-          :phone       => raw_info['data']['phone']
-        }
+        { :user_type => raw_info['type'] }.merge! raw_info['data']
       end
 
       extra do
