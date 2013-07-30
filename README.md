@@ -4,9 +4,9 @@ Unofficial OmniAuth strategy for [Clever SSO OAuth2](https://getclever.com/devel
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add the gem to your application's Gemfile:
 
-    gem 'omniauth-clever', git: 'git://github.com/thinkthroughmath/omniauth-clever.git'
+    gem 'omniauth-clever', '~> 1.0.0'
 
 And then execute:
 
@@ -30,8 +30,8 @@ end
 
 ## Configuring
 
-To be able to set the optional `clever_landing` parameter on a per-request
-basis by passing `clever_landing` in params to your `/auth/clever` url, use
+To be able to set the optional `clever_landing` or `dev` parameters on a
+per-request basis by passing these params to your `/auth/clever` url, use
 this in the initializer instead:
 
 ```ruby
@@ -40,6 +40,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            :setup => lambda { |env|
              params = Rack::Utils.parse_query(env['QUERY_STRING'])
              env['omniauth.strategy'].options[:client_options][:clever_landing] = params['clever_landing']
+             env['omniauth.strategy'].options[:client_options][:dev] = params['dev']
            }
 end
 ```
@@ -55,3 +56,13 @@ end
 ## License
 
 MIT. See LICENSE.txt.
+
+## Thank yous
+
+Thank you to the [Clever](https://github.com/Clever/) team for their awesome
+product and always being helpful with any issues. Thank you to [Think Through
+Math](https://github.com/thinkthroughmath) for dedicating time for the tech
+team to make open source contributions such as this.
+
+And, of course. thank you to [Omniauth](https://github.com/intridea/omniauth)
+for making it so easy create this gem!
