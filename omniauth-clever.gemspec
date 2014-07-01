@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Omniauth::Clever::VERSION
   gem.authors       = ["Carol Nichols"]
   gem.email         = ["cnichols@thinkthroughmath.com"]
-  gem.description   = %q{Unofficial OmniAuth strategy for getclever.com SSO OAuth2 integration}
-  gem.summary       = %q{The unofficial strategy for authenticating people using getclever.com to your application using Clever's OAuth2 provider}
+  gem.description   = %q{Unofficial OmniAuth strategy for clever.com SSO OAuth2 integration}
+  gem.summary       = %q{The unofficial strategy for authenticating people using clever.com to your application using Clever's OAuth2 provider}
   gem.homepage      = "https://github.com/thinkthroughmath/omniauth-clever"
   gem.license       = 'MIT'
 

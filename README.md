@@ -1,6 +1,6 @@
 # OmniAuth Clever
 
-Unofficial OmniAuth strategy for [Clever SSO OAuth2](https://getclever.com/developers/docs/oauth) integration.
+Unofficial OmniAuth strategy for [Clever SSO OAuth2](https://clever.com/developers/docs/oauth) integration.
 
 ## Installation
 
