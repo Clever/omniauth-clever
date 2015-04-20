@@ -1,12 +1,12 @@
 # OmniAuth Clever
 
-Unofficial OmniAuth strategy for [Clever SSO OAuth2](https://clever.com/developers/docs/oauth) integration.
+Unofficial OmniAuth strategy for [Clever SSO OAuth2](https://dev.clever.com/sso) integration.
 
 ## Installation
 
 Add the gem to your application's Gemfile:
 
-    gem 'omniauth-clever', '~> 1.1.0'
+    gem 'omniauth-clever', '~> 1.2.0'
 
 And then execute:
 
@@ -44,6 +44,10 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+## Testing
+
+This strategy can be and has been tested with the [omniauth-test-harness](https://github.com/PracticallyGreen/omniauth-test-harness).
+
 ## Contributing
 
 1. Fork it
@@ -61,7 +65,7 @@ MIT. See LICENSE.txt.
 Thank you to the [Clever](https://github.com/Clever/) team for their awesome
 product and always being helpful with any issues. Thank you to [Think Through
 Math](https://github.com/thinkthroughmath) for dedicating time for the tech
-team to make open source contributions such as this.
+team to make open source contributions such as this. Thank you to [StudyPad] for helping bringing the strategy up to date.
 
 And, of course. thank you to [Omniauth](https://github.com/intridea/omniauth)
 for making it so easy create this gem!
