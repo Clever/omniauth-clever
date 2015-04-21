@@ -6,11 +6,15 @@ require 'omniauth/clever/version'
 Gem::Specification.new do |gem|
   gem.name          = "omniauth-clever"
   gem.version       = Omniauth::Clever::VERSION
-  gem.authors       = ["Carol Nichols"]
-  gem.email         = ["cnichols@thinkthroughmath.com"]
-  gem.description   = %q{Unofficial OmniAuth strategy for Clever SSO OAuth2 integration}
-  gem.summary       = %q{The unofficial strategy for authenticating people using Clever to your application using Clever OAuth2}
-  gem.homepage      = "https://github.com/thinkthroughmath/omniauth-clever"
+  gem.authors       = ["Carol Nichols", "Swati Aggarwal"]
+  gem.email         = ["cnichols@thinkthroughmath.com", "swati.aggarwal2412@gmail.com"]
+  gem.description   = %q{OmniAuth strategy for clever.com SSO OAuth2 integration}
+  gem.summary       = %q{The unofficial strategy for authenticating people using clever.com to your application using Clever's OAuth2 provider}
+  gem.homepage      = "https://github.com/clever/omniauth-clever"
+  gem.license       = 'MIT'
+
+  gem.signing_key   = ENV['GEM_PRIVATE_KEY']
+  gem.cert_chain    = ['gem-public_cert.pem']
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

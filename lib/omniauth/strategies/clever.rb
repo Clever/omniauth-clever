@@ -7,22 +7,14 @@ module OmniAuth
       option :name, "clever"
 
       option :client_options, {
-        :site          => 'https://api.getclever.com',
-        :authorize_url => 'https://account.getclever.com/oauth/authorize',
-        :token_url     => 'https://api.getclever.com/oauth/token'
+        :site          => 'https://api.clever.com',
+        :authorize_url => 'https://clever.com/oauth/authorize',
+        :token_url     => 'https://clever.com/oauth/tokens'
       }
 
-      def authorize_params
-        super.tap do |params|
-          params[:scope] = 'read_only'
-          params[:clever_landing] = options.client_options.fetch(:clever_landing, 'admin')
-        end
-      end
-
       def token_params
-        username_password = options.client_secret + ":"
         super.tap do |params|
-          params[:headers] = {'Authorization' => "Basic #{Base64.encode64(username_password)}"}
+          params[:headers] = {'Authorization' => "Basic #{Base64.strict_encode64("#{options.client_id}:#{options.client_secret}")}"}
         end
       end
 
