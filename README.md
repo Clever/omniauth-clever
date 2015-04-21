@@ -65,7 +65,7 @@ MIT. See LICENSE.txt.
 Thank you to the [Clever](https://github.com/Clever/) team for their awesome
 product and always being helpful with any issues. Thank you to [Think Through
 Math](https://github.com/thinkthroughmath) for dedicating time for the tech
-team to make open source contributions such as this. Thank you to [StudyPad] for helping bringing the strategy up to date.
+team to make open source contributions such as this. Thank you to [StudyPad](https://github.com/StudyPad) for helping bringing the strategy up to date.
 
 And, of course. thank you to [Omniauth](https://github.com/intridea/omniauth)
 for making it so easy create this gem!
