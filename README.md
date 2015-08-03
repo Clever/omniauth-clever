@@ -6,7 +6,7 @@ Unofficial OmniAuth strategy for [Clever SSO OAuth2](https://dev.clever.com/sso)
 
 Add the gem to your application's Gemfile:
 
-    gem 'omniauth-clever', '~> 1.2.0'
+    gem 'omniauth-clever', '~> 1.2.1'
 
 And then execute:
 
@@ -27,6 +27,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :clever, ENV['CLEVER_CLIENT_ID'], ENV['CLEVER_CLIENT_SECRET']
 end
 ```
+
+Clever is a unique OAuth 2.0 service provider in that login sequences
+are often initiated by Clever, not the client. When Clever initiates
+login, a state parameter is not relevant nor sent.
+
 
 ## Configuring
 
