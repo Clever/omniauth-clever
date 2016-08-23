@@ -57,6 +57,11 @@ module OmniAuth
       def raw_info
         @raw_info ||= access_token.get('/me').parsed
       end
+
+      # Fix unknown redirect uri bug by NOT appending the query string to the callback url.
+      def callback_url
+        full_host + script_name + callback_path
+      end
     end
   end
 end
