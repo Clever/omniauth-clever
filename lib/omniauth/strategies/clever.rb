@@ -55,7 +55,14 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/me').parsed
+        @raw_info ||= begin
+                        raw_info = access_token.get('me').parsed
+                        unless raw_info['data'].has_key?('name')
+                          canonical_me = raw_info['links'].select { |link| link['rel'] == 'canonical' }.first
+                          raw_info['data'].merge! access_token.get(canonical_me['uri']).parsed['data']
+                        end
+                        raw_info
+                      end
       end
 
       # Fix unknown redirect uri bug by NOT appending the query string to the callback url.
