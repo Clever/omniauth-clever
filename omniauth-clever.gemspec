@@ -1,25 +1,28 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'omniauth/clever/version'
 
-Gem::Specification.new do |gem|
-  gem.name          = "omniauth-clever"
-  gem.version       = Omniauth::Clever::VERSION
-  gem.authors       = ["Carol Nichols", "Swati Aggarwal"]
-  gem.email         = ["cnichols@thinkthroughmath.com", "swati.aggarwal2412@gmail.com"]
-  gem.description   = %q{OmniAuth strategy for clever.com SSO OAuth2 integration}
-  gem.summary       = %q{The unofficial strategy for authenticating people using clever.com to your application using Clever's OAuth2 provider}
-  gem.homepage      = "https://github.com/clever/omniauth-clever"
-  gem.license       = 'MIT'
+Gem::Specification.new do |spec|
+  spec.name          = "omniauth-clever"
+  spec.version       = Omniauth::Clever::VERSION
+  spec.authors       = ["Panorama Education"]
+  spec.email         = ["engineering@panoramaed.com"]
+  spec.description   = "The Panorama strategy for authenticating people using clever.com using Clever's OAuth2 provider"
+  spec.summary       = spec.description
+  spec.license       = 'MIT'
 
-  gem.signing_key   = ENV['GEM_PRIVATE_KEY']
-  gem.cert_chain    = ['gem-public_cert.pem']
+  spec.signing_key   = ENV['GEM_PRIVATE_KEY']
+  spec.cert_chain    = ['gem-public_cert.pem']
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
 
-  gem.add_runtime_dependency 'omniauth-oauth2', '>= 1.1', '<= 1.5'
+  spec.add_development_dependency "rack-test"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec_junit_formatter"
+
+  spec.add_dependency "omniauth-oauth2", "= 1.8.0"
 end
