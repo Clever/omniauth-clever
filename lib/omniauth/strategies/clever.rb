@@ -20,6 +20,18 @@ module OmniAuth
       # **State will still be verified** when login is initiated by the client.
       option :provider_ignores_state, true
 
+      option :full_host
+
+      # Allows full host to be overridden. This is important because Clever is forcing https in production,
+      # so we need to use https redirect url even when our host page is http.
+      def full_host
+        if options.full_host.blank?
+          super
+        else
+          options.full_host
+        end
+      end
+
       def token_params
         super.tap do |params|
           params[:headers] = {'Authorization' => "Basic #{Base64.strict_encode64("#{options.client_id}:#{options.client_secret}")}"}
